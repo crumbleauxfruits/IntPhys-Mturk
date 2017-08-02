@@ -1,0 +1,16 @@
+{
+    "title":               "Word Learning Experiment",
+    "description":         "A small experiment about language processing (approximately 3-4 minutes total).",
+    "keywords":            "word learning, language",
+    "url":                 "https://langcog.stanford.edu/expts/FormConcept/experiment1.html",
+    "frame_height":         600,
+    "assignment_duration":  "20 minutes",
+    "auto_approval_delay":  "5 minutes",
+    "reward":               0.30,
+    "experimenter":         "Abdellah Fourtassi",
+    "server_log_path":      "https://langcog.stanford.edu/cgi-bin/cosub/log_submission.php",
+    "qualifications": {
+        "location": "US",
+        "approval_percentage":85 
+    }
+}

@@ -1,0 +1,124 @@
+<!-- ## Code -->
+<!-- <meta charset="utf-8"/> -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intuitive physics experiment </title>
+	<!-- Include the [jQuery library](http://jquery.com/), which helps you manipulate HTML elements from JS. -->
+	<script src="jquery-1.11.2.min.js"></script>
+	<!-- [mmturkey]: http://github.com/longouyang/mmturkey -->
+	<!--<script src="mmturkey.js"></script>-->
+	<link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+<!-- The instructions slide. -->
+<div class="slide" id="introduction" align="center">
+	<div style="width: 500px; margin: 0 auto; text-align: center; padding: 20px 15px 10px 10px">
+		<img src="images/Logo_ehess.svg.png" height="100" width="100" alt="EHESS">
+		<img src="images/logo_ens.png" height="100" width="100" alt="ENS">
+		<img src="images/image_preview.png" height="100" width="100" alt="CNRS">
+	</div>
+	<p id='logo-text'>Laboratoire de Sciences Cognitives et Psycholinguistique</p>
+	<p class="block-text">
+        This is an experiment that tests aspects of intuitive physics learning. The experiment involves watching video sequences. You will not be asked to listen to anything, but please make sure to watch every video entirely. <br><br> The experiment lasts approximately 10 minutes.
+    </p>
+
+	<!-- Button to start the experiment. <code>this.blur()</code> removes the focus from the button, if the user pressed the button by using the keyboard, rather than the mouse. -->
+	<button type="button" onclick="this.blur(); experiment.next()">Start</button>
+	<!-- Legal blurb that we're required to show. -->
+
+
+    <p class="block-text" id="legal">By answering the following questions, you are participating in a study being performed by researchers at the LSCP. If you have questions about this research, please contact us at <a href="mailto://emmanuel.dupoux@gmail.com">emmanuel.dupoux@gmail.com</a>. You must be  at least 18 years old to participate. Your participation in this research is voluntary. You may decline to answer any or all of the following questions. You may decline further participation, at any time, without adverse consequences. Your anonymity is assured; the researchers who have requested your participation will not receive any personal information about you. Note however that we have recently been made aware that your public Amazon.com profile can be accessed via your worker ID if you do not choose to opt out. If you would like to opt out of this feature, you may follow instructions available <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=16465241">here</a>.</p>
+</div>
+
+<div class="slide" id="stage">
+    <div align="center">
+        <p id="img">{{}}</p>
+		<button type="button" onclick="this.blur(); experiment.replay()">Replay</button>
+    </div>
+	<table align="center">
+	    <tr>
+	        <td>
+	            <div id="intruct_text">
+	                <p class="question-text">-Press the <span class="p-key">{{}}</span> key you think the video is <b>Possible</b><br><br>-Press the <span class="i-key">{{}}</span> key you think the video is <b>Impossible</b></p>
+	            </div>
+	        </td>
+	    </tr>
+	</table>
+	<!-- <br><br><p>path: <span id="path">{{}}</span></p> -->
+</div>
+
+
+<div class="slide" id="instruction1">
+
+    <br><br>
+    <p class="block-text"> Welcome to the intuitive physics test! </p>
+    <p class="block-text"> You will see videos representing objects moving in a virtual environment.
+  They have been created using software similar to that used in computer
+  games and animation movies.</p>
+     <p class="block-text">Some are simple:  </p>
+   	<p align="center"><img src="manip_loop/test/046_block_C1_test_visible_dynamic_1/1/scene/video.gif" width="256">
+   	 <img src="manip_loop/test/047_block_C1_test_visible_dynamic_1/1/scene/video.gif" width="256"></p>
+   	<p align="center"><img src="manip_loop/test/048_block_C1_test_visible_dynamic_1/1/scene/video.gif" width="256">
+   	 <img src="manip_loop/test/049_block_C1_test_visible_dynamic_1/1/scene/video.gif" width="256"></p>
+     <br>
+     <p class="block-text">Some are more complicated:  </p>
+     <p align="center"><img src="train/1016_blockC1_train.gif" width="256">
+      <img src="train/1174_blockC1_train.gif" width="256"></p>
+     <p align="center"><img src="train/1372_blockC1_train.gif" width="256">
+      <img src="train/1438_blockC1_train.gif" width="256"></p>
+
+  <table align="center">
+    <td align="center">
+      <button type="button" id="nextButton_choice" onClick="this.blur(); experiment.next()"> Next </button>
+    </td>
+  </table>
+</div>
+
+<div class="slide" id="instruction2">
+	<p class="block-text"> In what follows, some videos are incorrect or corrupted: they show
+        events that could not possibly take place in the real world. You will
+        have to label these videos as <b>IMPOSSIBLE</b> (by pressing the letter <span class="i-key">{{}}</span> ). </p>
+
+	<p class="block-text"> Others are normal and could take place in the real world. You will
+        have to label these videos as <b>POSSIBLE</b> (by pressing the letter <span class="p-key">{{}}</span>).</p>
+
+ <p class="block-text">Please do watch carefully and attend to the full video each time (even if
+        some of them are a little boring). You never know when something impossible
+        might happen. If you are not sure what you saw, you'll be allowed to watch again.</p>
+
+<br>
+  <table align="center">
+    <td align="center">
+      <button type="button" id="nextButton_choice" onClick="this.blur(); experiment.next()"> Start </button>
+    </td>
+  </table>
+</div>
+
+<div class="slide" id="pause">
+
+	<br><br><p align="center">You have done: <span id="n_trial">{{}}</span>/ <span id="n_test">{{}}</span></p><br>
+	<p align="center">To continue, click on Next</p><br>
+  <table align="center">
+    <td align="center">
+      <button type="button" id="nextButton_choice" onClick="this.blur(); experiment.next()"> Next </button>
+    </td>
+  </table>
+
+</div>
+
+<!-- The finish slide. -->
+<div class="slide" id="finished">
+    <p class="block-text"> The experiment is over - thank you for your participation! <br><br>Don't forget to fill the HIT home page with your Mechanical Turk Worker ID and the following code:</p>
+    <p class="block-text" style="color:red;" style="font-size:36px;"> <span id="code">{{}}</span></p>
+</div>
+
+<!-- Include the <a href="experiment.html">JavaScript file for the experiment</a>. As written, that script immediately executes commands, so we include it here at the end of the HTML file to ensure that resources referenced by the script actually exist. For instance, one of the immediately executed commands is <code>showSlide("instructions")</code>. If we loaded experiment.js, say, in the <code>head</code> section, <code>showSlide("instructions")</code> would fail because the <code>instructions</code> slide doesn't exist yet. It is possible to load the script in <code>head</code> but you have to ensure that any immediately executed commands, if they rely on potentially uninitialized HTML elements, are _delayed_ until the page is ready, using either [window.onload][onload] or jQuery's more robust [$(document).ready()][domReady]  -->
+<!-- [onload]: https://developer.mozilla.org/en/DOM/window.onload -->
+<!-- [domReady]: http://api.jquery.com/ready/ -->
+<script src="experiment.js"></script>
+
+</body>
+</html>

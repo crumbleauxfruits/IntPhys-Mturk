@@ -1,0 +1,16 @@
+{
+    "title":               "Intuitive physics experiment",
+    "description":         "A small experiment about intuitive physics (approximately 3-4 minutes total).",
+    "keywords":            "Infant development, Cognitive Science",
+    "url":                 "experiment1.html",
+    "frame_height":         600,
+    "assignment_duration":  "20 minutes",
+    "auto_approval_delay":  "5 minutes",
+    "reward":               0.30,
+    "experimenter":         "Ronan Riochet",
+    "server_log_path":      "log_submission.php",
+    "qualifications": {
+        "location": "US",
+        "approval_percentage":85 
+    }
+}
