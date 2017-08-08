@@ -1,3 +1,7 @@
+var pause_every = 20
+// var minReacTime = 7000
+var minReacTime = 0
+
 var count;
 $.ajax({
   url:"counter.php",
@@ -24,7 +28,7 @@ $.ajax({
   type:"POST",
   async:false,
   success:function(d){
-    code = JSON.parse(d);
+    code = d;
   }
 });
 
@@ -56,9 +60,6 @@ function shuffle(array) {
 }
 
 var batch = batches[count % 20];
-alert(count)
-alert(batches.length);
-alert(batch)
 
 batch = shuffle(batch);
 
@@ -93,16 +94,6 @@ function saveExperimentData(experiment){
 }
 
 var n_test = batch.length
-var n_occluded = 0
-var pause_every = 20
-var minReacTime = 7000
-
-var $imgPath_test = new Array();
-for (i=0; i < n_test; i++)
-{
-    $imgPath_test.push(batch[i]);
-}
-
 
 var myKeyBindings = {"i": -1, "p": 1};
 
@@ -131,7 +122,7 @@ var i = 0
 while (i < n_test){
     myTrial = {
         trial_type: "test",
-        imgPath:$imgPath_test[i],
+        imgPath:batch[i],
     }
     myTrials.push(myTrial);
     i = i + 1
@@ -196,7 +187,7 @@ var experiment = {
             }
         if (current_trial.trial_type == "test")
             {
-                var $current_img= $('<img>').attr('src', current_trial.imgPath +"?a="+Math.random()).height(400).width(400);
+                var $current_img= $('<img>').attr('src', current_trial.imgPath + "?a=" + Math.random()).height(400).width(400);
                 showSlide("stage");
 
                 // Display the img.

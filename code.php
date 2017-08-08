@@ -1,3 +1,7 @@
 <?php
-echo file_get_contents("code.txt");
+$f = fopen("code.txt","r");
+$code = fread($f, filesize("code.txt"));
+fclose($f); 
+
+echo $code;
 ?>
