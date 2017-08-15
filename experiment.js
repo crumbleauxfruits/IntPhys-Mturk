@@ -1,6 +1,6 @@
 var pause_every = 20
-// var minReacTime = 7000
-var minReacTime = 0
+var minReacTime = 7000
+//var minReacTime = 0
 
 var count;
 $.ajax({
@@ -59,7 +59,7 @@ function shuffle(array) {
   return array;
 }
 
-var batch = batches[count % 20];
+var batch = batches[count % 90];
 
 batch = shuffle(batch);
 
